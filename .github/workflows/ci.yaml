@@ -1,0 +1,13 @@
+on:
+  push:
+
+    branches:
+      - master
+
+jobs:
+  build-my-app:
+    uses: my-test-projects/super-app-infra/.github/workflows/reusable-docker-build-and-push.yaml@main
+    with:
+      image_name: "my-test-app1"     # This is passed to the template
+      dockerfile_path: "./Dockerfile" # This is passed to the template
+      secrets: inherit  # Passes necessary registry credentials securely
