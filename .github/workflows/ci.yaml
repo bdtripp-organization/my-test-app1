@@ -10,4 +10,4 @@ jobs:
     with:
       image_name: "my-test-app1"     # This is passed to the template
       dockerfile_path: "./Dockerfile" # This is passed to the template
-      secrets: inherit  # Passes necessary registry credentials securely
+    secrets: inherit  # Passes necessary registry credentials securely
