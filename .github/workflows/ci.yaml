@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-my-app:
-    uses: bdtripp-organization/super-app-infra/.github/workflows/reusable-docker-build-and-push.yaml@main
+    uses: bdtripp-organization/super-app-infra/.github/workflows/reusable-docker-build-and-push.yaml@master
     with:
       image_name: "my-test-app1"     # This is passed to the template
       dockerfile_path: "./Dockerfile" # This is passed to the template
