@@ -1,12 +1,23 @@
 on:
   push:
 
+    #Does not run until the merge happens
     branches:
       - development
       - master
 
 jobs:
-  build-my-app:
+  build-for-development:
+    if: github.ref == 'refs/heads/development'
+    uses: bdtripp-organization/super-app-infra/.github/workflows/reusable-docker-build-and-push.yaml@development
+    with:
+      image_name: "my-test-app1"     # This is passed to the template
+      dockerfile_path: "./Dockerfile" # This is passed to the template
+    secrets: inherit  # Passes necessary registry credentials securely
+
+jobs:
+  build-for-production:
+    if: github.ref == 'refs/heads/master'
     uses: bdtripp-organization/super-app-infra/.github/workflows/reusable-docker-build-and-push.yaml@master
     with:
       image_name: "my-test-app1"     # This is passed to the template
