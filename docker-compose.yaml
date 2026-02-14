@@ -7,6 +7,7 @@ services:
       - "deunhealth.restart=true"
     environment:
       - VIRTUAL_HOST=${SUBDOMAIN}
+      - VIRTUAL_PATH=/my-test-app1
       - LETSENCRYPT_HOST=${SUBDOMAIN}
     healthcheck:
       test: ["CMD-SHELL", "wget -q --spider http://localhost/ || exit 1"]
