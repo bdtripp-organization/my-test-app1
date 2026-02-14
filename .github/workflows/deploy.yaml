@@ -1,0 +1,15 @@
+name: Deploy App
+
+on:
+  push:
+    branches:
+      - development
+      - master
+jobs:
+  deploy-for-development:
+    if: github.ref == 'refs/heads/development'
+    uses: bdtripp-organization/super-app-infra/.github/workflows/reusable-deploy.yaml@development
+  deploy-for-production:
+    if: github.ref == 'refs/heads/master'
+    uses: bdtripp-organization/super-app-infra/.github/workflows/reusable-deploy.yaml@master
+#test
