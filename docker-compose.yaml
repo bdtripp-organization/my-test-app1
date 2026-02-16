@@ -1,6 +1,6 @@
 services:
   # Web Application
-  my-test-app1:
+  web: # Other services could be db, api, or app
     image: btripp365/my-test-app1:${TAG}
     restart: always
     labels:
@@ -8,7 +8,6 @@ services:
     environment:
       - VIRTUAL_HOST=${SUBDOMAIN}
       - VIRTUAL_PATH=/my-test-app1
-      - LETSENCRYPT_HOST=${SUBDOMAIN}
     healthcheck:
       test: ["CMD-SHELL", "wget -q --spider http://localhost/ || exit 1"]
       interval: 30s
