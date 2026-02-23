@@ -1,5 +1,6 @@
-<?php 
-    $prefix = getenv('ENV_NAME') == 'dev' ? 'dev-' : '';
+<?php
+    $env_name = getenv('ENV_NAME');
+    $prefix = $env_name == 'prod' ? '' : $env_name . '-';
 ?>
 
 <!DOCTYPE html>
