@@ -1,3 +1,4 @@
-FROM httpd:2.4-alpine
-COPY index.html /usr/local/apache2/htdocs/index.html
+FROM php:8.2-apache
+RUN rm -f /var/www/html/index.html
+COPY index.php /var/www/html/index.php
 EXPOSE 80

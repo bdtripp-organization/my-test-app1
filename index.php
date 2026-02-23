@@ -1,3 +1,8 @@
+<?php
+    $env_name = getenv('ENV_NAME');
+    $prefix = $env_name == 'prod' ? '' : $env_name . '-';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,6 +12,6 @@
     </head>
     <body>
         <h1>Hello World! Test</h1>
-        <a href="https://dev-my-test-app2.bdtripp.com/">My Test App 2</a>
+        <a href="<?= "https://{$prefix}my-test-app2.bdtripp.com/" ?>">My Test App 2</a>
     </body>
 </html>
