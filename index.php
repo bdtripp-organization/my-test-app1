@@ -7,6 +7,6 @@
     </head>
     <body>
         <h1>Hello World! Test</h1>
-        <a href="https://dev-my-test-app2.bdtripp.com/">My Test App 2</a>
+        <a href="https://<?= getenv('VIRTUAL_HOST') ?>">My Test App 2</a>
     </body>
 </html>
